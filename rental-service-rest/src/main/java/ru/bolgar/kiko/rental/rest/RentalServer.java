@@ -94,7 +94,7 @@ public class RentalServer implements AutoCloseable {
                     answer = ownerService.getFlats();
                 } else {
                     //TODO Other mapping
-                    //TODO I dont not understand whe i can't use spring framework
+                    //TODO Why not spring MVC
                 }
                 if (answer == null) {
                     return;
@@ -107,7 +107,6 @@ public class RentalServer implements AutoCloseable {
                 httpServletResponse.setContentLength(data.length());
                 httpServletResponse.getWriter().println(mapper.writeValueAsString(answer));
                 httpServletResponse.setStatus(200);
-
             }
         });
         this.server.start();
